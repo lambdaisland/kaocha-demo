@@ -1,7 +1,15 @@
 #kaocha/v1
-{:tests [{:ns-patterns ["test.clj"]}
-         {:id                  :features
-          :type                :kaocha.type/cucumber
-          :source-paths        ["src"]
-          :test-paths          ["test/features"]
-          :cucumber/glue-paths ["test/feature_steps"]}]}
+{:plugins         [:kaocha.plugin/notifier]
+ :bindings        {kaocha.type.cljs/*debug* true}
+ :capture-output? false
+ :tests           [{:type          :kaocha.type/cljs
+                    :ns-patterns   [".*"]
+                    :cljs/timeout  40000
+                    :cljs/repl-env figwheel-repl.test/repl-env
+                    :cljs/compiler-options {:main kaocha-demo.main
+                                            :output-to "resources/public/main.js"
+                                            :output-dir "resources/public"
+                                            :asset-path "resources/public"
+                                            :optimizations :none
+                                            :target :nodejs}
+                    }]}

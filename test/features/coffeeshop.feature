@@ -7,6 +7,7 @@ Feature: Coffee shop order fulfilment
       | Matcha Latte | 4.00  |
       | Green Tea    | 3.50  |
 
+
   Scenario: Getting change
     When I order a Matcha Latte
     And pay with $5.00

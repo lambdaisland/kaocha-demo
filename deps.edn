@@ -1,10 +1,23 @@
 {:paths ["src" "test" "resources"]
- :deps  {org.clojure/clojure {:mvn/version "1.10.0"}}
+ :deps  {org.clojure/clojure        {:mvn/version "1.10.0"}
+         org.clojure/clojurescript  {:git/url "https://github.com/clojure/clojurescript"
+                                     :tag     "master"
+                                     :sha     "fc66a5a558b2749c93e1d29605bb69d58f0ad36f"}
+         vvvvalvalval/scope-capture {:mvn/version "0.3.2"}}
  :aliases
  {:dev
   {}
 
   :test
   {:extra-deps
-   {lambdaisland/kaocha          {:mvn/version "0.0-359"}
-    lambdaisland/kaocha-cucumber {:mvn/version "0.0-36"}}}}}
+   {lambdaisland/kaocha                           {:local/root "/home/arne/github/lambdaisland/kaocha"}
+    lambdaisland/kaocha-cljs                      {:local/root "/home/arne/github/lambdaisland/kaocha-cljs"}
+    lambdaisland/kaocha-cucumber                  {:mvn/version "0.0-46"}
+    lambdaisland/glogi                            {:mvn/version "RELEASE"}
+    com.bhauman/figwheel-repl                     {:local/root "/home/arne/github/figwheel-repl"}
+    #_                                            {:mvn/version "0.2.1"}
+    ring                                          {:mvn/version "1.7.1"}
+    org.eclipse.jetty.websocket/websocket-servlet {:mvn/version "9.4.12.v20180830"}
+    org.eclipse.jetty.websocket/websocket-server  {:mvn/version "9.4.12.v20180830"}
+    }
+   }}}

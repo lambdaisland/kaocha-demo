@@ -1,6 +1,7 @@
 (ns demo.test
   (:require [clojure.test :refer :all]))
 
+
 (deftest basic-test
   (is (= {:foo 1} {:foo 1}) "at least one that passes"))
 
