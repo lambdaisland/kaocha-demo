@@ -1,7 +1,8 @@
 #kaocha/v1
-{:tests [{:ns-patterns ["test.clj"]}
-         {:id                  :features
-          :type                :kaocha.type/cucumber
-          :source-paths        ["src"]
-          :test-paths          ["test/features"]
-          :cucumber/glue-paths ["test/feature_steps"]}]}
+{:tests [{:ns-patterns [".*test"]}
+         #_{:id                  :features
+            :type                :kaocha.type/cucumber
+            :source-paths        ["src"]
+            :test-paths          ["test/features"]
+            :cucumber/glue-paths ["test/feature_steps"]}]
+ :plugins [:notifier]}

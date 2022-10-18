@@ -1,10 +1,11 @@
 {:paths ["src" "test" "resources"]
- :deps  {org.clojure/clojure {:mvn/version "1.10.0"}}
+ :deps  {org.clojure/clojure {:mvn/version "1.10.3"}}
  :aliases
  {:dev
-  {}
+  {:extra-paths ["dev"]
+   :extra-deps {djblue/portal {:mvn/version "RELEASE"}}}
 
   :test
   {:extra-deps
-   {lambdaisland/kaocha          {:mvn/version "0.0-359"}
-    lambdaisland/kaocha-cucumber {:mvn/version "0.0-36"}}}}}
+   {lambdaisland/kaocha          {:local/root "/home/arne/github/lambdaisland/kaocha"}#_{:mvn/version "1.0.829"}
+    lambdaisland/kaocha-cucumber {:mvn/version "0.0-53"}}}}}

@@ -1,14 +1,15 @@
-(ns coffeeshop-steps
+(ns feature-steps.coffeeshop-steps
   (:require [lambdaisland.cucumber.dsl :refer :all]
             [clojure.test :refer :all]))
 
+
 (Given "the following price list" [state table]
-  (assoc state
-         :price-list
-         (into {}
-               (map (fn [[k v]]
-                      [k (Double/parseDouble v)]))
-               table)))
+       (assoc state
+              :price-list
+              (into {}
+                    (map (fn [[k v]]
+                           [k (Double/parseDouble v)]))
+                    table)))
 
 (When "I order a (.*)" [state product]
   (update state :order conj product))
